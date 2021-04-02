@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8">
-        <title>Assignment 6 &laquo; Data Visualization Dashboard&raquo;</title>
-        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-        <link rel="stylesheet" href="main.css"/>
-        <!--Feel free to add more CSS files as needed-->
-        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
-    </head>
+    <meta charset="utf-8">
+    <title>Assignment 6 &laquo; Data Visualization Dashboard&raquo;</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css" />
+    <!--Feel free to add more CSS files as needed-->
+    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+
 <body>
     <div class="header">
         <h3>Assignment 6 &laquo; Data Visualization Dashboard &raquo;</h3>
@@ -15,14 +17,92 @@
     <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
     <div class="row">
         <div class="col-lg-6">
+            <hr>
+            <h3> Genre Sales By Region</h3>
+            <button type="button" class="btn btn-info" onclick="graph22(0, 'NA_Sales')">NA Sales</button>
+            <button type="button" class="btn btn-info" onclick="graph22(1, 'EU_Sales')">EU Sales</button>
+            <button type="button" class="btn btn-info" onclick="graph22(2, 'JP_Sales')">JP Sales</button>
+            <button type="button" class="btn btn-info" onclick="graph22(3, 'Other_Sales')">Other Sales</button>
             <div id="graph1"></div>
-            <div id="graph2"></div><br/>
+            <hr>
+            <div id="graph2"></div><br />
         </div>
         <div class="col-lg-6">
+            <button type="button" class="btn btn-info" onclick="bestPublisher(0, 'Action')">Action</button>
+            <button type="button" class="btn btn-info" onclick="bestPublisher(1, 'Adventure')">Adventure</button>
+            <button type="button" class="btn btn-info" onclick="bestPublisher(2, 'Fighting')">Fighting</button>
+            <button type="button" class="btn btn-info" onclick="bestPublisher(3, 'Misc')">Misc</button>
+            <button type="button" class="btn btn-info" onclick="bestPublisher(4, 'Platform')">Platform</button>
+            <button type="button" class="btn btn-info" onclick="bestPublisher(5, 'Puzzle')">Puzzle</button>
+            <button type="button" class="btn btn-info" onclick="bestPublisher(6, 'Racing')">Racing</button>
+            <button type="button" class="btn btn-info" onclick="bestPublisher(7, 'Role-Playing')">Role-Playing</button>
+            <button type="button" class="btn btn-info" onclick="bestPublisher(8, 'Shooter')">Shooter</button>
+            <button type="button" class="btn btn-info" onclick="bestPublisher(9, 'Simulation')">Simulation</button>
+            <button type="button" class="btn btn-info" onclick="bestPublisher(10, 'Sports')">Sports</button>
+            <button type="button" class="btn btn-info" onclick="bestPublisher(11, 'Strategy')">Strategy</button>
             <div id="graph3"></div>
         </div>
     </div>
     <!--Feel free to add more JavaScript files as needed-->
     <script type="text/javascript" src="main.js"></script>
 </body>
+
 </html>
+
+
+/*/ Written Questions!
+1.
+My dashboard provides visuals and statistics to effectively answer my boss's requests. My first graph essentially shows
+the top 10 games of all time (based on sales) and also includes the feature of seeing the top game of a specific year.
+My 2nd graph
+essentially toggles on region, showing the "winning" genre for each region (in sales). This is super helpful as it is
+easy to compare say
+Action video games when looking at North American sales vs EU sales. This helps my boss see this information clearly.
+Lastly, my 3rd graph
+addresses the top publishers for a specific genre. I assumed that having the highest ranking game in the genre
+correlated to the best publisher. I
+also unfortunately had trouble with this graph (sorry), and was getting some bugs with showing the bars. Either way, my
+boss is able to see
+the top 5 publishers for each genre (if they look at the console LOL).
+At a high level, essentially my graphs properly clean this video game data and organize it in a way to essentially tell
+a story. With thousands of records, these few graphs tell a lot to summarize the data.
+
+2. D3 was helpful as it provided a ton of tools to deal with a HUGE data set. To manually go and scrape through that
+video game data set
+would easily days and days. So D3 provides a way to summarize data (using the max function, using its many graphing
+tools) and ultimately
+helps someone paint a picture with data. It was also fun to play around with the many D3 tools and see how drastically
+it changed your
+perception on the data.
+
+3. I think even though D3 has a lot of cool features, there are a bunch of drawbacks. For example, there are a lot of
+things to
+play around with that ultimately do not make it super straight forward when you are trying to paint a visual / picture.
+Although there
+is the possibility to have a dynamic graph / picture, it seems that there isn't much flexibility within altering graphs
+(say if you
+wanted to change a graph, it would have to be essentially completely re done.)
+
+4. Evaluating the accessibility of my dashboard, a lot of people would have a tough time reading this dashboard and its
+graphs.
+The smallish font and the colors could make it quite tough for people that are colorblind or have bad eye sight.
+Thinking of ways I could
+improve this dashboard / make it more accessible, I believe I could add a audio component, that could describe the
+graphs and the main
+takeaways. This would significantly help the visually impaired. I feel that I could also do a better job in establish
+the thickness of
+my lines / bar charts in my dashboard, so the story / message of my graphs can be easily understood. It is quite crazy
+to think that data
+visualization (has visualize in the word) can be so easily transformed to accomodate any person that does not have a
+perfect eyes, ears,
+brain etc. I think it is super clever and makes sense why data visualization is so important now.
+
+5. Ultimately what kept me from taking the steps to make my graphs / charts more accesible was the time and nuisance in
+doing it. It is quite
+obvious that making a chart readable / more accessible and even including an audio feature, takes a lot of time and
+preciseness. This is not
+so easy when you are coding in javascript (especially using D3, something I have never used before). It is also
+important to recognize that
+people want to take shortcuts and maybe not ultimately show the real truths in their data, and this can lead to them not
+allowing their data
+to be fully accessible.
